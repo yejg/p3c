@@ -38,6 +38,7 @@ import net.sourceforge.pmd.lang.java.ast.ASTVariableDeclaratorId;
 public class LowerCamelCaseVariableNamingRule extends AbstractAliRule {
 
     private static final String MESSAGE_KEY_PREFIX = "java.naming.LowerCamelCaseVariableNamingRule.violation.msg";
+    // TODO 这里需要修改正则表达式，以便支持 CRH 的标准字段 命名
     private Pattern pattern = Pattern.compile("^[a-z|$][a-z0-9]*([A-Z][a-z0-9]*)*(DO|DTO|VO|DAO)?$");
 
     @Override

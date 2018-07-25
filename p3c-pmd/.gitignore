@@ -88,3 +88,4 @@ hsf.configuration/
 
 #hsf test
 *.instance
+/target/
