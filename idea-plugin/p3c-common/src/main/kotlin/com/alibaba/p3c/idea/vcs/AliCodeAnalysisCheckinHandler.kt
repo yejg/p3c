@@ -75,13 +75,14 @@ class AliCodeAnalysisCheckinHandler(
     val log = Logger.getInstance(javaClass)
 
     override fun getBeforeCheckinConfigurationPanel(): RefreshableOnComponent? {
-        val checkBox = NonFocusableCheckBox("Alibaba Code Guidelines")
+//        val checkBox = NonFocusableCheckBox("Alibaba Code Guidelines")
+        val checkBox = NonFocusableCheckBox("代码检查(*)")
         return object : RefreshableOnComponent {
             override fun getComponent(): JComponent {
                 val panel = JPanel(BorderLayout())
                 panel.add(checkBox)
                 val dumb = DumbService.isDumb(myProject)
-                checkBox.isEnabled = !dumb
+                checkBox.isEnabled = false
                 checkBox.toolTipText = if (dumb) {
                     "Code analysis is impossible until indices are up-to-date"
                 } else {
@@ -128,8 +129,8 @@ class AliCodeAnalysisCheckinHandler(
                     myProject, "Analyze Finished")
             return CheckinHandler.ReturnResult.COMMIT
         }
-        if (Messages.showOkCancelDialog(myProject, "Found suspicious code,continue commit？",
-                dialogTitle, commitText, cancelText, null) == Messages.OK) {
+        val rtnCode=Messages.showDialog(myProject,"Found suspicious code, continue commit?",dialogTitle, arrayOf(commitText, cancelText),1,null)
+        if (rtnCode == Messages.OK) {
             return CheckinHandler.ReturnResult.COMMIT
         } else {
             doAnalysis(myProject, virtualFiles.toTypedArray())

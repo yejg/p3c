@@ -36,7 +36,7 @@ class P3cConfig : PersistentStateComponent<P3cConfig> {
     var ruleCacheTime = 1000L
     var ruleCacheEnable = false
 
-    var analysisBeforeCheckin = false
+    var analysisBeforeCheckin = true
 
     var locale: String = ""
         get() {
