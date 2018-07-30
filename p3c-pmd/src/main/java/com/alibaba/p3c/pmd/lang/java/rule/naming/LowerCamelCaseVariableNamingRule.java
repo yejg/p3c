@@ -43,6 +43,9 @@ public class LowerCamelCaseVariableNamingRule extends AbstractAliRule {
     
     // 标准字段规则
     private Pattern stdPattern = Pattern.compile("^[a-z|$][a-z0-9]*(_[a-z0-9]*)*$");
+    
+    // 标准字段对应的get/set方法
+    private Pattern stdGetSetPattern = Pattern.compile("^[gs]et[A-Z][a-z|$][a-z0-9]*(_[a-z0-9]*)*$");
 
     @Override
     public Object visit(final ASTVariableDeclaratorId node, Object data) {
@@ -67,17 +70,15 @@ public class LowerCamelCaseVariableNamingRule extends AbstractAliRule {
 			ViolationUtils.addViolationWithPrecisePosition(this, node, data,
 	                I18nResources.getMessage(MESSAGE_KEY_PREFIX + ".variable", node.getImage()));
 		}
-//        if (!(pattern.matcher(node.getImage()).matches())) {
-//            ViolationUtils.addViolationWithPrecisePosition(this, node, data,
-//                I18nResources.getMessage(MESSAGE_KEY_PREFIX + ".variable", node.getImage()));
-//        }
         return super.visit(node, data);
     }
 
     @Override
 
     public Object visit(ASTMethodDeclarator node, Object data) {
-        if (!(pattern.matcher(node.getImage()).matches())) {
+    	boolean matchCamelCase = pattern.matcher(node.getImage()).matches();
+    	boolean matchStdGetSet = stdGetSetPattern.matcher(node.getImage()).matches();
+		if (!(matchCamelCase || matchStdGetSet)) {
             ViolationUtils.addViolationWithPrecisePosition(this, node, data,
                 I18nResources.getMessage(MESSAGE_KEY_PREFIX + ".method", node.getImage()));
         }

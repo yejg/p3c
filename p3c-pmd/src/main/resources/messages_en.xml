@@ -23,10 +23,10 @@
         <![CDATA[[%s] must be ended with Exception]]>
     </entry>
     <entry key="java.naming.LowerCamelCaseVariableNamingRule.violation.msg.method">
-        <![CDATA[method [%s] not conform to the lowerCamelCase]]>
+        <![CDATA[method [%s] not conform to the lowerCamelCase/standardFiledCase]]>
     </entry>
     <entry key="java.naming.LowerCamelCaseVariableNamingRule.violation.msg.variable">
-        <![CDATA[variable [%s] not conform to the lowerCamelCase]]>
+        <![CDATA[variable [%s] not conform to the lowerCamelCase/standardFiledCase]]>
     </entry>
     <entry key="java.naming.PackageNamingRule.violation.msg">
         <![CDATA[Package [%s] should be named in lowercase characters]]>
