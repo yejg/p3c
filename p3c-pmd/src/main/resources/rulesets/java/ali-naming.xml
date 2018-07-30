@@ -64,7 +64,6 @@
           since="1.6"
           message="java.naming.LowerCamelCaseVariableNamingRule.rule.msg"
           class="com.alibaba.p3c.pmd.lang.java.rule.naming.LowerCamelCaseVariableNamingRule">
-        <!-- <priority>3</priority> -->
         <priority>2</priority>
     </rule>
 

@@ -38,8 +38,11 @@ import net.sourceforge.pmd.lang.java.ast.ASTVariableDeclaratorId;
 public class LowerCamelCaseVariableNamingRule extends AbstractAliRule {
 
     private static final String MESSAGE_KEY_PREFIX = "java.naming.LowerCamelCaseVariableNamingRule.violation.msg";
-    // TODO 这里需要修改正则表达式，以便支持 CRH 的标准字段 命名
+    
     private Pattern pattern = Pattern.compile("^[a-z|$][a-z0-9]*([A-Z][a-z0-9]*)*(DO|DTO|VO|DAO)?$");
+    
+    // 标准字段规则
+    private Pattern stdPattern = Pattern.compile("^[a-z|$][a-z0-9]*(_[a-z0-9]*)*$");
 
     @Override
     public Object visit(final ASTVariableDeclaratorId node, Object data) {
@@ -58,10 +61,16 @@ public class LowerCamelCaseVariableNamingRule extends AbstractAliRule {
         }
 
         // variable naming violate lowerCamelCase
-        if (!(pattern.matcher(node.getImage()).matches())) {
-            ViolationUtils.addViolationWithPrecisePosition(this, node, data,
-                I18nResources.getMessage(MESSAGE_KEY_PREFIX + ".variable", node.getImage()));
-        }
+        boolean matchCamelCase = pattern.matcher(node.getImage()).matches();
+        boolean matchStd = stdPattern.matcher(node.getImage()).matches();
+		if (!(matchCamelCase || matchStd)) {
+			ViolationUtils.addViolationWithPrecisePosition(this, node, data,
+	                I18nResources.getMessage(MESSAGE_KEY_PREFIX + ".variable", node.getImage()));
+		}
+//        if (!(pattern.matcher(node.getImage()).matches())) {
+//            ViolationUtils.addViolationWithPrecisePosition(this, node, data,
+//                I18nResources.getMessage(MESSAGE_KEY_PREFIX + ".variable", node.getImage()));
+//        }
         return super.visit(node, data);
     }
 
