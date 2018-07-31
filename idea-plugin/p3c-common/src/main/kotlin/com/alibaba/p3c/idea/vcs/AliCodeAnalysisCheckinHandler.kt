@@ -67,9 +67,9 @@ class AliCodeAnalysisCheckinHandler(
         private val myProject: Project,
         private val myCheckinPanel: CheckinProjectPanel
 ) : CheckinHandler() {
-    private val dialogTitle = "Alibaba Code Analyze"
-    private val cancelText = "&Cancel"
-    private val commitText = "&Commit Anyway"
+    private val dialogTitle = "代码检查"
+    private val cancelText = "暂不提交"
+    private val commitText = "继续提交"
     private val waitingText = "Wait"
 
     val log = Logger.getInstance(javaClass)
@@ -125,11 +125,12 @@ class AliCodeAnalysisCheckinHandler(
         val virtualFiles = CheckinHandlerUtil.filterOutGeneratedAndExcludedFiles(myCheckinPanel.virtualFiles, myProject)
         val hasViolation = hasViolation(virtualFiles, myProject)
         if (!hasViolation) {
-            BalloonNotifications.showSuccessNotification("No suspicious code found！",
+            BalloonNotifications.showSuccessNotification("未发现可疑代码！",
                     myProject, "Analyze Finished")
             return CheckinHandler.ReturnResult.COMMIT
         }
-        val rtnCode=Messages.showDialog(myProject,"Found suspicious code, continue commit?",dialogTitle, arrayOf(commitText, cancelText),1,null)
+        // Found suspicious code, continue commit?
+        val rtnCode=Messages.showDialog(myProject,"发现可疑代码，是否继续提交？",dialogTitle, arrayOf(commitText, cancelText),1,null)
         if (rtnCode == Messages.OK) {
             return CheckinHandler.ReturnResult.COMMIT
         } else {

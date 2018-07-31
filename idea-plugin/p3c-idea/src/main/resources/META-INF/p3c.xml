@@ -31,7 +31,7 @@
                 id="com.alibaba.p3c.idea.action.SwitchLanguageAction"
                 icon="P3cIcons.LANGUAGE">
         </action>
-        <group popup="true" id="com.alibaba.p3c.analytics.action_group" text="编码规约" icon="P3cIcons.ALIBABA">
+        <group popup="true" id="com.alibaba.p3c.analytics.action_group" text="编码规约" icon="P3cIcons.ANALYSIS_ACTION">
             <reference ref="AliP3CInspectionAction"/>
             <reference ref="ToggleProjectInspectionAction"/>
             <reference ref="com.alibaba.p3c.idea.action.SwitchLanguageAction"/>

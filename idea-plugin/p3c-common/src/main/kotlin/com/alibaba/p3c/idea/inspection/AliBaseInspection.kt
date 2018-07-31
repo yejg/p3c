@@ -77,6 +77,6 @@ interface AliBaseInspection {
     }
 
     companion object {
-        val GROUP_NAME = "Ali-Check"
+        val GROUP_NAME = "Code-Check"
     }
 }

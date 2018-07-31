@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>com.alibaba.p3c.smartfox</id>
-    <name>Alibaba Java Coding Guidelines</name>
-    <description>Alibaba Java Coding Guidelines plugin support.</description>
+    <name>Java Coding Guidelines</name>
+    <description>Java Coding Guidelines plugin support.</description>
 
     <change-notes>
         <![CDATA[
