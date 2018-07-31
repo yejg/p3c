@@ -146,7 +146,7 @@
                 class="com.alibaba.smartfox.eclipse.QuickFixGenerator"/>
     </extension>
     <extension point="org.eclipse.ui.preferencePages">
-        <page name="Alibaba Code Analysis"
+        <page name="Code Analysis"
               class="com.alibaba.smartfox.eclipse.ui.AllRulesPreferencePage"
               id="com.alibaba.smartfox.eclipse.ui.AllRulesPreferencePage"/>
     </extension>

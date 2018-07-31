@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-    <entry key="com.alibaba.smartfox.eclipse.handler.CodeAnalysisHandler">Alibaba Coding Guidelines Analyze</entry>
+    <entry key="com.alibaba.smartfox.eclipse.handler.CodeAnalysisHandler">Coding Guidelines Analyze</entry>
     <entry key="com.alibaba.smartfox.eclipse.handler.SwitchLanguageHandler.text.cur_zh">Switch language to English</entry>
     <entry key="com.alibaba.smartfox.eclipse.handler.SwitchLanguageHandler.text.cur_en">Switch language to Chinese</entry>
 

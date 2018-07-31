@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-    <entry key="com.alibaba.smartfox.eclipse.handler.CodeAnalysisHandler">阿里编码规约扫描</entry>
+    <entry key="com.alibaba.smartfox.eclipse.handler.CodeAnalysisHandler">编码规约扫描</entry>
 
     <entry key="com.alibaba.smartfox.eclipse.handler.SwitchLanguageHandler.text.cur_zh">切换语言至英文(English)</entry>
     <entry key="com.alibaba.smartfox.eclipse.handler.SwitchLanguageHandler.text.cur_en">切换语言至中文</entry>
