@@ -507,5 +507,13 @@ Note: If attribute is null or does not exist, ${var} will be shown directly on w
     <entry key="vm.other.UseQuietReferenceNotationRule.violation.msg">
         <![CDATA[variable [%s] should add ! after $]]>
     </entry>
+    
+    <!-- cairenhui -->
+    <entry key="java.crh.ControllerShouldNotAutowiredMapperRule.rule.msg">
+        <![CDATA[SpringMVC controller should not autowired Mapper or Dao directly, please user it through service.]]>
+    </entry>
+    <entry key="java.crh.ControllerShouldNotAutowiredMapperRule.rule.desc">
+        <![CDATA[Note: SpringMVC controller should not autowired Mapper or Dao directly.]]>
+    </entry>
 
 </properties>

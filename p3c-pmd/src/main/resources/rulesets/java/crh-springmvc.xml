@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<ruleset name="AlibabaJavaOthers" xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+
+    <rule name="ControllerShouldNotAutowiredMapperRule" language="java" since="crh.extremely.serious"
+        message="java.crh.ControllerShouldNotAutowiredMapperRule.rule.msg"
+        class="com.alibaba.p3c.pmd.lang.java.rule.crh.ControllerShouldNotAutowiredMapperRule">
+        <description>java.crh.ControllerShouldNotAutowiredMapperRule.rule.desc</description>
+        <priority>1</priority>
+        <example>
+			<![CDATA[
+反例:
+  @Controller
+  public class ExampleAction {
+    @Autowired
+    private UserMapper usermapper;
+    
+    ....
+  }
+			]]>
+      </example>
+    </rule>
+</ruleset>

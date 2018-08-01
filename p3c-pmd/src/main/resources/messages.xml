@@ -506,4 +506,12 @@
     </entry>
 
 
+	<!-- cairenhui -->
+    <entry key="java.crh.ControllerShouldNotAutowiredMapperRule.rule.msg">
+        <![CDATA[SpringMVC控制类中不能直接使用Mapper或DAO，请通过Service间接使用。]]>
+    </entry>
+    <entry key="java.crh.ControllerShouldNotAutowiredMapperRule.rule.desc">
+        <![CDATA[说明：不要在SpringMVC控制器中直接使用Mapper或DAO。]]>
+    </entry>
+
 </properties>
