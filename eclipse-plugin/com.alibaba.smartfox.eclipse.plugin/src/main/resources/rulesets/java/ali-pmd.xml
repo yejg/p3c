@@ -14,4 +14,5 @@
     <rule ref="rulesets/java/ali-exception.xml"/>
     <rule ref="rulesets/java/ali-set.xml"/>
     <rule ref="rulesets/java/ali-ruleOnEclipse.xml"/>
+    <rule ref="rulesets/java/crh-springmvc.xml"/>
 </ruleset>
